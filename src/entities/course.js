@@ -1,8 +1,11 @@
-
-
-class Course {
+export class Course {
     constructor(props = {}) {
-        this.title = props.title
+        this.id = props.id
+        this.code = props.code
+        this.name = props.name
         this.desc = props.desc || ''
+        this.courseRepresentative= props.courseRepresentative
+        this.groups = props.groups
+        this.professors=props.professors
     }   
 }

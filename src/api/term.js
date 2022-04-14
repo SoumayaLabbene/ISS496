@@ -1,9 +1,9 @@
-import { Course } from '../entities'
+import { Term } from '../entities'
 
 export default {
 
-    add(course){
-        const res = axios.post('..../course',Course(course))
+    add(term){
+        const res = axios.post('..../term',Term(term))
         if ('error' in res) {
             throw new Error(res.error)
         } else {
@@ -11,8 +11,8 @@ export default {
 
         }
     },
-    update(course){
-        const res = axios.put('..../course',Course(course))
+    update(term){
+        const res = axios.put('..../term',Term(term))
         if ('error' in res) {
             throw new Error(res.error)
         } else {
@@ -21,26 +21,26 @@ export default {
         }
     },
     getOne(id) {
-        const res = axios.get('...../course/' + id)
+        const res = axios.get('...../group/' + id)
 
         if ('error' in res) {
             throw new Error(res.error)
         } else {
-            return new Course(res.data)
+            return new Group(res.data)
         }
     },
 
     getList() {
-        const res = axios.get('...../course')
+        const res = axios.get('...../term')
 
         if ('error' in res) {
             throw new Error(res.error)
         } else {
-            return res.data.map(course => new Course(course))
+            return res.data.map(term => new Term(term))
         }
     },
     delete(id){
-        const res = axios.delete('..../course'+id)
+        const res = axios.delete('..../term'+id)
         if ('error' in res) {
             throw new Error(res.error)
         } else {
